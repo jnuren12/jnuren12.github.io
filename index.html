@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeezhu</title>
+  <link rel="stylesheet" type="text/css" href="style/app.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-title">记珠</h1>
+    <button id="butAdd" class="headerButton">+</button>
+    <button id="butRefresh" class="headerButton">&#x21bb;</button>
+  </header>
+
+  <main class="main" hidden>
+    <div class="card cardTemplate" hidden>
+      <div class="card-title"></div>
+      <div class="card-body"></div>
+    </div>
+  </main>
+
+  <div class="dialog-container">
+    <div class="dialog">
+      <div class="dialog-title">想看些什么呢?</div>
+      <div class="dialog-body">
+        <select id="selectWidgetToAdd">
+          <option value="recmenu">菜单推荐</option>
+          <option value="takeout">附近的外卖</option>
+          <option value="gpacredit">学分与绩点</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butAddWidget" class="button">确认</button>
+        <button id="butAddCancel" class="button">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
