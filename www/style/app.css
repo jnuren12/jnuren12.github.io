@@ -37,7 +37,7 @@ body {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 2px 9px 1px rgba(0, 0, 0, 0.12),
     0 4px 2px -2px rgba(0, 0, 0, 0.2);
-  padding: 16px 16px 0 16px;
+  padding: 8px 8px 0 8px;
   will-change: transform;
   display: flex;
   flex-direction: row;
@@ -48,11 +48,10 @@ body {
   transition: transform 0.233s cubic-bezier(0,0,0.21,1) 0.1s;
 }
   .headerButton {
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
+    width: 36px;
+    height: 36px;
     overflow: hidden;
-    opacity: 0.74;
+    opacity: 0.84;
     transition: opacity 0.333s cubic-bezier(0,0,0.21,1);
     border: none;
     outline: none;
@@ -63,8 +62,10 @@ body {
 
 .header-title {
   margin: 0;
+  padding: 4px;
   font-size: 20px;
   font-weight: 400;
+  text-align: center;
   flex: 1;
 }
 
@@ -178,16 +179,16 @@ body {
 }
   .card-title {
     padding-bottom: 5px;
-    font-size: 1.75em;
+    font-size: 1.5em;
     border-bottom: solid 1px #ececec;
   }
   .card-body {
-    padding: 16px;
+    padding: 12px;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
   }
   .card-body:before {
-    content: ":) ";
+    content: "- ";
     font-weight: 400;
     font-family: "Courier New", courier, monospace;
   }

@@ -1,0 +1,13 @@
+{
+  "name": "Jeezhu",
+  "short_name": "Jeezhu",
+  "icons": [{
+      "src": "images/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "/index.html?homescreen=1",
+  "display": "standalone",
+  "background_color": "#3e4eB8",
+  "theme_color": "#4169e1"
+}

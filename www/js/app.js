@@ -4,7 +4,7 @@
   var initWidget = {
     key: 'recmenu',
     label: '菜单推荐',
-    content: '叉烧滑蛋饭'
+    content: [ '叉烧滑蛋饭' ]
   }
 
   var app = {
@@ -63,7 +63,6 @@
 
   app.updateWidgetCard = function (data) {
     var card = app.visibleCards[data.key]
-    var pick = data.content
     if (!card) {
       card = app.cardTemplate.cloneNode(true)
       card.classList.remove('cardTemplate')
@@ -71,9 +70,9 @@
       card.removeAttribute('hidden')
       app.container.appendChild(card)
       app.visibleCards[data.key] = card
-    } else {
-      pick = pick[Math.floor(Math.random() * pick.length)]
     }
+    var pick = data.content
+    pick = pick[Math.floor(Math.random() * pick.length)]
     card.querySelector('.card-body').textContent = pick
     if (app.isLoading) {
       app.spinner.setAttribute('hidden', true)
