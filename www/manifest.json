@@ -1,6 +1,6 @@
 {
-  "name": "Jeezhu",
-  "short_name": "Jeezhu",
+  "name": "记珠",
+  "short_name": "记珠",
   "icons": [{
     "src": "images/icon-256x256.png",
     "sizes": "256x256",
@@ -8,6 +8,6 @@
   }],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#3e4eB8",
+  "background_color": "#4169e1",
   "theme_color": "#4169e1"
 }
