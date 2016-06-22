@@ -95,7 +95,7 @@
         if (response) {
           response.json().then(function (json) {
             if (app.hasRequestPending) {
-              console.log('[App] Widget updated from cache')
+              console.log('[App] :D Widget updated from cache')
               json.key = key
               json.label = label
               app.updateWidgetCard(json)
@@ -113,7 +113,7 @@
           response.key = key
           response.label = label
           app.hasRequestPending = false
-          console.log('[App] Widget updated from network')
+          console.log('[App] :D Widget updated from network')
           app.updateWidgetCard(response)
         }
       }
@@ -160,9 +160,11 @@
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-      .register('../service-worker.js')
+      .register('../sw.js')
       .then(function () {
-        console.log('Service worker registered')
+        console.log('[App] :D Service worker registered')
+      }).catch(function (err) {
+        console.log('[App] :X', err)
       })
   }
 })()

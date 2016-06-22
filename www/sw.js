@@ -1,31 +1,31 @@
 var dataCacheName = 'jeezhu-widgetData-v1'
 var cacheName = 'jeezhu-webapp-v1'
 var filesToCache = [
-  './index.html',
-  './favicon.png',
-  './style/app.css',
-  './js/app.js',
-  './images/icon-256x256.png',
-  './images/ic_refresh_white_24px.svg',
-  './images/ic_add_white_24px.svg'
+  'index.html',
+  'favicon.png',
+  'style/app.css',
+  'js/app.js',
+  'images/icon-256x256.png',
+  'images/ic_refresh_white_24px.svg',
+  'images/ic_add_white_24px.svg'
 ]
 
 self.addEventListener('install', function (e) {
-  console.log('[ServiceWorker] Install')
+  console.log('[Service Worker] :D Install')
   e.waitUntil(
     caches.open(cacheName).then(function (cache) {
-      console.log('[ServiceWorker] Caching app shell')
+      console.log('[Service Worker] :D Caching app shell')
       return cache.addAll(filesToCache)
     })
   )
 })
 
 self.addEventListener('activate', function (e) {
-  console.log('[ServiceWorker] Activate')
+  console.log('[Service Worker] :D Activate')
   e.waitUntil(
     caches.keys().then(function (keyList) {
       return Promise.all(keyList.map(function (key) {
-        console.log('[ServiceWorker] Removing old cache', key)
+        console.log('[Service Worker] :D Removing old cache', key)
         if (key !== cacheName) {
           return caches.delete(key)
         }
@@ -35,7 +35,7 @@ self.addEventListener('activate', function (e) {
 })
 
 self.addEventListener('fetch', function (e) {
-  console.log('[ServiceWorker] Fetching', e.request.url)
+  console.log('[Service Worker] :D Fetching', e.request.url)
   var dataUrl = 'https://raw.githubusercontent.com/jnuren12/jeezhu-webapp/master/test/'
   if (e.request.url.indexOf(dataUrl) === 0) {
     e.respondWith(
@@ -43,7 +43,7 @@ self.addEventListener('fetch', function (e) {
         .then(function (response) {
           return caches.open(dataCacheName).then(function (cache) {
             cache.put(e.request.url, response.clone())
-            console.log('[ServiceWorker] Fetched & Cached Data')
+            console.log('[Service Worker] :D Fetched & Cached Data')
             return response
           })
         })
