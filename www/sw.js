@@ -1,13 +1,14 @@
 var dataCacheName = 'jeezhu-widgetData-v1'
 var cacheName = 'jeezhu-webapp-v1'
 var filesToCache = [
-  'index.html',
-  'favicon.png',
-  'style/app.css',
-  'js/app.js',
-  'images/icon-256x256.png',
-  'images/ic_refresh_white_24px.svg',
-  'images/ic_add_white_24px.svg'
+  './',
+  './index.html',
+  './favicon.png',
+  './style/app.css',
+  './js/app.js',
+  './images/icon-256x256.png',
+  './images/ic_refresh_white_24px.svg',
+  './images/ic_add_white_24px.svg'
 ]
 
 self.addEventListener('install', function (e) {
