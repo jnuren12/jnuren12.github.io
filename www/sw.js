@@ -1,14 +1,14 @@
 var dataCacheName = 'jeezhu-widgetData-v1'
 var cacheName = 'jeezhu-webapp-v1'
 var filesToCache = [
-  './',
-  './index.html',
-  './favicon.png',
-  './style/app.css',
-  './js/app.js',
-  './images/icon-256x256.png',
-  './images/ic_refresh_white_24px.svg',
-  './images/ic_add_white_24px.svg'
+  '/',
+  '/index.html',
+  '/favicon.png',
+  '/style/app.css',
+  '/js/app.js',
+  '/images/icon-256x256.png',
+  '/images/ic_refresh_white_24px.svg',
+  '/images/ic_add_white_24px.svg'
 ]
 
 self.addEventListener('install', function (e) {
@@ -37,7 +37,14 @@ self.addEventListener('activate', function (e) {
 
 self.addEventListener('fetch', function (e) {
   console.log('[Service Worker] :D Fetching', e.request.url)
-  var dataUrl = 'https://raw.githubusercontent.com/jnuren12/jeezhu-webapp/master/test/'
+  const url = new URL(e.request.url)
+  var dataUrl = 'https://raw.githubusercontent.com/jnuren12/jnuren12.github.io/master/test/'
+
+  if (url.origin === location.origin && url.pathname === '/') {
+    e.respondWith(caches.match('/index.html'))
+    return
+  }
+
   if (e.request.url.indexOf(dataUrl) === 0) {
     e.respondWith(
       fetch(e.request)
@@ -49,11 +56,12 @@ self.addEventListener('fetch', function (e) {
           })
         })
     )
-  } else {
-    e.respondWith(
-      caches.match(e.request).then(function (response) {
-        return response || fetch(e.request)
-      })
-    )
+    return
   }
+
+  e.respondWith(
+    caches.match(e.request).then(function (response) {
+      return response || fetch(e.request)
+    })
+  )
 })

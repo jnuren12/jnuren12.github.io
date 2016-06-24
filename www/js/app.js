@@ -88,7 +88,7 @@
    */
 
   app.getWidget = function (key, label) {
-    var url = 'https://raw.githubusercontent.com/jnuren12/jeezhu-webapp/master/test/'
+    var url = 'https://raw.githubusercontent.com/jnuren12/jnuren12.github.io/master/test/'
     url += key + '.json'
     if ('caches' in window) {
       caches.match(url).then(function (response) {
@@ -160,7 +160,7 @@
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-      .register('./sw.js')
+      .register('sw.js')
       .then(function () {
         console.log('[App] :D Service worker registered')
       }).catch(function (err) {
