@@ -1,0 +1,15 @@
+{
+  "name": "jeezhu-webapp",
+  "version": "0.0.1",
+  "description": "Jeezhu - Web app verison progressively powered by Service Worker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jnuren12/jnuren12.github.io.git"
+  },
+  "author": "AnqurVanillapy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jnuren12/jnuren12.github.io/issues"
+  },
+  "homepage": "https://github.com/jnuren12/jnuren12.github.io"
+}
