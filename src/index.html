@@ -14,65 +14,75 @@
   <meta name="msapplication-TileImage" content="images/icon-256x256.png">
   <meta name="msapplication-TileColor" content="#4169e1">
   <meta name="msapplication-tap-highlight" content="no">
-
-  <link rel="icon" href="favicon.ico">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="node_modules/framework7/dist/css/framework7.material.min.css">
-  <link rel="stylesheet" href="node_modules/framework7/dist/css/framework7.material.colors.min.css">
-  <link rel="stylesheet" type="text/css" href="style/app.css">
-
   <title>记珠</title>
-</head>
-<body class="theme-cyan">
 
+  <link rel="icon" href="../favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="../node_modules/framework7/dist/css/framework7.material.min.css">
+  <link rel="stylesheet" href="../node_modules/framework7/dist/css/framework7.material.colors.min.css">
+</head>
+<body>
   <div class="statusbar-overlay"></div>
   <div class="panel-overlay"></div>
 
   <div class="panel panel-left panel-cover">
-    <div class="list-block">
-      <ul>
-        <li>
-          <a class="item-content item-link close-panel" href="#">
-            <div class="item-inner">
-              <div class="item-title">登录</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a class="item-content item-link close-panel" href="#">
-            <div class="item-inner">
-              <div class="item-title">下载APP</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a class="item-content item-link close-panel" href="#">
-            <div class="item-inner">
-              <div class="item-title">帮助与反馈</div>
-            </div>
-          </a>
-        </li>
-      </ul>
+    <div class="view navbar-fixed">
+      <div class="pages">
+        <div data-page="panel-left" class="page">
+          <div class="list-block media-list">
+            <ul>
+              <li>
+                <a class="item-link item-content">
+                  <div class="item-media"><img src="images/icon-256x256.png" width="44"></div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">登录 / 注册</div>
+                    </div>
+                    <div class="item-text">更多个性化功能</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link close-panel" href="#">
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">下载APP</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link close-panel" href="#">
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">帮助与反馈</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="views">
-    <div class="view view-main">
+    <div data-page="index" class="view view-main">
       <div class="pages navbar-fixed">
-        <!-- Page, "data-page" contains page name -->
-        <div data-page="index" class="page">
+        <div data-page="index" class="page page-on-center">
           <div class="navbar">
             <div class="navbar-inner">
               <div class="center">记珠</div>
               <div class="right">
-                <a href="#" data-panel="left" id="butAdd" class="link icon-only open-panel">
+                <a href="#" id="butAdd" class="link icon-only open-panel">
                   <i class="icon icon-bars"></i>
                 </a>
               </div>
             </div>
           </div>
 
-          <a href="select-widget.html" class="floating-button color-cyan">
+          <a href="select-widget.html" class="floating-button">
             <i class="icon icon-plus"></i>
           </a>
 
@@ -100,7 +110,7 @@
     </div>
   </div>
 
-  <script src="node_modules/framework7/dist/js/framework7.min.js"></script>
+  <script src="../node_modules/framework7/dist/js/framework7.min.js"></script>
   <script src="js/app.js"></script>
 <!--   <script>
     if ('serviceWorker' in navigator) {

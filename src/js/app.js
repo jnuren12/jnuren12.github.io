@@ -1,5 +1,5 @@
-(function () {
-  'use strict'
+// (function () {
+//   'use strict'
 
   /**
    *  ==================================
@@ -7,20 +7,18 @@
    *  ==================================
    */
 
-  var appF7 = new Framework7({
-    material: true
-  })
+var appF7 = new Framework7({
+  material: true,
+  modalTitle: 'Jeezhu'
+})
 
-  var appF7MainView = appF7.addView('.view-main', {
-    // properties of components
-  })
+var appF7MainView = appF7.addView('.view-main', {})
 
-  var $$ = Dom7
+var $$ = Dom7
 
-  // $$('.pull-to-refresh-content').on('refresh', () => {
-  //   app.updateWidgetCard()
-  //   appF7.pullToRefreshDone()
-  // })
+$$('.pull-to-refresh-content').on('refresh', function (page) {
+  setTimeout(function () { appF7.pullToRefreshDone() }, 1000)
+})
 
   /**
    *  =============
@@ -28,22 +26,22 @@
    *  =============
    */
 
-  var initWidget = {
-    key: 'recmenu',
-    label: '菜单推荐',
-    content: [ '叉烧滑蛋饭' ]
-  }
+  // var initWidget = {
+  //   key: 'recmenu',
+  //   label: '菜单推荐',
+  //   content: [ '叉烧滑蛋饭' ]
+  // }
 
-  var app = {
-    isLoading: true,
-    hasRequestPending: false,
-    visibleCards: {},
-    selectedWidgets: [],
-    spinner: document.querySelector('.loader'),
-    cardTemplate: document.querySelector('.cardTemplate'),
-    container: document.querySelector('.main'),
-    addDialog: document.querySelector('.dialog-container')
-  }
+  // var app = {
+  //   isLoading: true,
+  //   hasRequestPending: false,
+  //   visibleCards: {},
+  //   selectedWidgets: [],
+  //   spinner: document.querySelector('.loader'),
+  //   cardTemplate: document.querySelector('.cardTemplate'),
+  //   container: document.querySelector('.main'),
+  //   addDialog: document.querySelector('.dialog-container')
+  // }
 
   /**
    *  =================================
@@ -180,4 +178,4 @@
   //   ]
   //   app.saveSelectedWidgets()
   // }
-})()
+// })()

@@ -1,5 +1,14 @@
 #### joe made this: http://goel.io/joe
 
+#####=== Yeoman ===#####
+
+node_modules/
+bower_components/
+*.log
+
+build/
+dist/
+
 #####=== Node ===#####
 
 # Logs
@@ -28,5 +37,5 @@ build/Release
 
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
-node_modules
+# node_modules (duplicate)
 
