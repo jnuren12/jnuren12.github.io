@@ -91,18 +91,38 @@
               <div class="preloader"></div>
               <div class="pull-to-refresh-arrow"></div>
             </div>
-            <div class="card">
-              <div class="card-header">Welcome to Jeezhu!</div>
+            <div id="todo" class="card">
+              <div class="card-header">待办事项 / TODOs</div>
               <div class="card-content">
-                <div class="card-content-inner">This App is built for
-                demonstrating our experiment with Progressive Web App
-                and official Jeezhu development and production,
-                conveniently using GitHub Pages for tech preivew with
-                HTTPS powered. But please notice that the releases
-                will not gonna be put on this platform and we will use
-                domestic cloud services to host the official app, and
-                publish a project homepage to merge this
-                <code>gh-pages</code> branch.</div>
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="row">
+                            <div class="col-70">
+                              <div class="item-input">
+                                <input type="text" v-model="newTodo">
+                              </div>
+                            </div>
+                            <div class="col-20">
+                              <a v-on:click="addTodo" href="#" class="button button-raised">&#x2713;</a>
+                            </div>
+                            <div class="col-10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li v-for="todo in todos">
+                      <div class="item-content">
+                        <div v-on:click="removeTodo($index)" class="item-media"><i class="icon">&#x2717;</i></div>
+                        <div class="item-inner">
+                          <div class="item-title">{{ todo.text }}</div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -112,6 +132,7 @@
   </div>
 
   <script src="//cdn.bootcss.com/framework7/1.4.2/js/framework7.min.js"></script>
+  <script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
   <script src="js/bundle.js"></script>
 <!--   <script>
     if ('serviceWorker' in navigator) {

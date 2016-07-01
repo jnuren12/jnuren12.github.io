@@ -1,11 +1,8 @@
-// (function () {
-//   'use strict'
-
-  /**
-   *  ==================================
-   *  Code for Framework7 initialization
-   *  ==================================
-   */
+/**
+ *  ==================================
+ *  Code for Framework7 initialization
+ *  ==================================
+ */
 
 var appF7 = new Framework7({
   material: true,
@@ -19,6 +16,43 @@ var $$ = Dom7
 $$('.pull-to-refresh-content').on('refresh', function (page) {
   setTimeout(function () { appF7.pullToRefreshDone() }, 1000)
 })
+
+/**
+ *  =================
+ *  Code for Vue todo
+ *  =================
+ */
+
+new Vue({
+  el: '#todo',
+  data: {
+    newTodo: '',
+    todos: [
+      { text: 'Review the lessons!' }
+    ]
+  },
+  methods: {
+    addTodo: function () {
+      var text = this.newTodo.trim()
+      if (text) {
+        this.todos.push({ text: text })
+        this.newTodo = ''
+      }
+    },
+    removeTodo: function (index) {
+      this.todos.splice(index, 1)
+    }
+  }
+})
+
+/**
+ *  ==============================
+ *  Preview code from PWA examples
+ *  ==============================
+ */
+
+// (function () {
+//   'use strict'
 
   /**
    *  =============
